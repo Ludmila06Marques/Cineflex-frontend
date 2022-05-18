@@ -1,0 +1,30 @@
+/*TELA 1*/
+body{
+    width: 100%;
+}
+
+.pergunta{
+    height: 110px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pergunta h1{
+    font-size: 24px;
+    color: 
+    #293845;
+}
+.filmes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  
+   
+}
+.filme{
+    width: 129px;
+    height: 193px;
+    background-color: #E8833A;
+    margin-bottom: 27px;
+}
