@@ -12,7 +12,7 @@ return(
     <BrowserRouter>
     <Routes>
         <Route path="/" element={<Tela1/>}> </Route>
-        <Route path="/sessoes/:idFilme" element={<Tela2/>}></Route>
+        <Route path="/sessoes/:idFilme" element={<Tela2  />}></Route>
         <Route path="/assentos/:idSessao" element={<Tela3/>}></Route>
         <Route path="/sucesso" element={<Tela4/>}></Route>
         <Route path="/" element={<Tela1/>}></Route>
