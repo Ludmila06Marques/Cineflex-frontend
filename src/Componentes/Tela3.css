@@ -71,7 +71,7 @@
     font-size: 18px;
     color: #293845;
 }
-.input{
+input{
     display: flex;
     align-items: center;
   
@@ -82,7 +82,7 @@
     margin-bottom: 7px;
     font-size: 18px;
 }
-.reservar{
+.reservar button{
   
     width: 225px;
     height: 42px;
@@ -93,10 +93,11 @@
     #FFFFFF;
     font-size: 18px;
     margin-top: 57px;
+    margin-bottom: 100px;
 }
 .botao{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 130px;
+  
 }

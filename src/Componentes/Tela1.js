@@ -4,6 +4,7 @@ import { useEffect } from "react"
 import axios from 'axios'
 import { Link } from "react-router-dom"
 
+// 1 FILME
 function Filme({src , id} ){
 
     return(
@@ -16,16 +17,18 @@ function Filme({src , id} ){
     )
 }
 
-
+//Funcao que vai inserir o filme
 export default function Tela1(){
-const [filme , setFilme]=React.useState([])
 
- 
-   useEffect(()=>{
+    //Variavel que recebe o filme
+    const [filme , setFilme]=React.useState([])
+
+    //Pegar a lista de filmes da API
+    useEffect(()=>{
     const promiseFilme= axios.get("https://mock-api.driven.com.br/api/v5/cineflex/movies");
     promiseFilme.then((response)=>{
     setFilme([...response.data])   
-    console.log(filme)            
+             
     })
    },[])
    

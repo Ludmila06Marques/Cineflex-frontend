@@ -20,7 +20,7 @@ export default function Tela4(){
                 </div>
                 <div className="informacao">
                 <h1>Comprador</h1>
-                    <h2>Nome: João da Silva Sauro <br></br>CPF: 123.456.789-10</h2>
+                    <h2>Nome: name <br></br>CPF: cpf</h2>
                 </div>
             </div>
             <div className="botao">

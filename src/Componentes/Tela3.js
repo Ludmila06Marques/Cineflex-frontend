@@ -1,9 +1,152 @@
 import "./Tela3.css"
-import Assento from "./Assento"
-import { Link } from "react-router-dom"
+
+import { Link, useParams } from "react-router-dom"
+import { useEffect} from "react"
+import axios from "axios"
+import React from "react"
+import Footer from "./Footer"
+import "./Assento.css"
+
+
+function Assento(){
+    return(<>
+     <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+      <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+        <div className="assento">               
+        </div>
+       
+       
+    </>
+       
+    )
+}
+
+
+
+
+
 
 export default function Tela3(){
+
+ const [filme , setFilme]= React.useState({})
+const {idSessao}= useParams()
+const[name , setName]=React.useState(" ")
+const[cpf , setCpf]=React.useState(" ")
+const [sessao , setSessao]= React.useState({})
+ 
+//Pegar os assentos disponiveis de cada sessao
+useEffect(()=>{
+    const promise = axios.get(`https://mock-api.driven.com.br/api/v5/cineflex/showtimes/${idSessao}/seats`);
+    promise.then(response=>{
+    setSessao({...response.data})
+    setFilme({...response.data})
+ 
    
+    })
+},[])
+
+
+
+
+function Prevenir (e){
+    e.preventDefault()
+}
     return(
         <>
         <div className="conteudo">
@@ -30,24 +173,26 @@ export default function Tela3(){
             <div className="dados">
                 <div className="dado-nome">
                     <h1>Nome do comprador:</h1>
-                   <div className="input">Digite seu nome...</div>
+                    <form  onSubmit={Prevenir}> 
+                  <input type="text" placeholder="Digite seu nome" onChange={(e)=> setName(e.target.value)} value={name} required />
+                  </form>
                 </div>
                 <div className="dado-cpf">
                     <h1>CPF do comprador:</h1>
-                   <div className="input">Digite seu CPF...</div>
+                    <form onSubmit={Prevenir} >
+                    <input type="text" placeholder="Digite seu CPF"  onChange={(e)=> setCpf(e.target.value)} value={cpf}  required/>
+                    </form>
                 </div>
             </div>
             <div className="botao">
-                <Link to="/sucesso">
-                  <button class="reservar"> Reservar assento/s</button>
+                <Link class="reservar"to="/sucesso">
+                  <button > Reservar assento/s</button>
                   </Link>
             </div>
-            <div className="footer">
-                <div className="filme-escolhido"></div>
-                <div className="titulo"><h1>Enola Holmes</h1></div>
-             </div>
+        <Footer filme={filme}/>
           
         </div>
         </>
     )
+  
 }

@@ -6,6 +6,7 @@ import Tela3 from "./Componentes/Tela3";
 import Tela4 from "./Componentes/Tela4";
 
 export default function App(){
+    
 return(
     <>
     <Logo/>
@@ -14,7 +15,7 @@ return(
         <Route path="/" element={<Tela1/>}> </Route>
         <Route path="/sessoes/:idFilme" element={<Tela2  />}></Route>
         <Route path="/assentos/:idSessao" element={<Tela3/>}></Route>
-        <Route path="/sucesso" element={<Tela4/>}></Route>
+        <Route path="/sucesso" element={<Tela4 />}></Route>
         <Route path="/" element={<Tela1/>}></Route>
     </Routes>
     
