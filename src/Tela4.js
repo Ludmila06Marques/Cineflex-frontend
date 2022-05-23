@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import styled from "styled-components"
 
-export default function Tela4({cpf , name}){
+export default function Tela4({cpf , name  , poster } ){
 
     return(
         <>
@@ -13,7 +13,7 @@ export default function Tela4({cpf , name}){
             <InformacaoGeral>
                 <Informacao>
                     <h1>Filme e sessão</h1>
-                    <h2>Enola Holmes <br></br>24/06/2021 15:00</h2>
+                    <h2>{poster.title} <br></br>24/06/2021 15:00</h2>
                 </Informacao>
                 <Informacao>
                 <h1>Ingressos</h1>
@@ -32,6 +32,7 @@ export default function Tela4({cpf , name}){
      
          </>
     )
+   
 }
 const Botao= styled.div`
   display: flex;

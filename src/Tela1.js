@@ -5,9 +5,9 @@ import Caixa from "./Caixa"
 import { useState, useEffect } from "react"
 
 
-export default function Tela1 () {
+export default function Tela1 ({filme , setFilme}) {
 
-const [filme, setFilme] =useState([])
+
 
 useEffect (() => {
 const promise = axios.get("https://mock-api.driven.com.br/api/v5/cineflex/movies")

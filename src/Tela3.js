@@ -3,14 +3,14 @@ import axios from "axios";
 import { useParams , Link } from 'react-router-dom';
 import {useState, useEffect } from 'react';
 import Instrucao from "./Instrucao"
+import Footer from "./Footer";
 
-export default function Tela3 (){
-    const[name , setName]=useState(" ")
-    const[cpf , setCpf]=useState(" ")
+export default function Tela3 ({cpf , setCpf , name , setName , poster }){
+  
     const { idSessao } = useParams()
 
     const [lugar, setLugar] = useState([])
-
+    
 
 
     useEffect (() => {
@@ -32,6 +32,8 @@ export default function Tela3 (){
             <PrintarLugar 
             key={index}   
             index={index}
+            livre={props.isAvailable}
+            
             >
                
             {props.name}
@@ -64,6 +66,10 @@ export default function Tela3 (){
                   <Button > Reservar assento/s</Button>
                   </Link>
             </Bot>
+            <Footer >
+                <BannerFilme src={poster.posterURL}></BannerFilme>
+                <BannerName> {poster.title} </BannerName>
+            </Footer>
         </>
 
 
@@ -71,11 +77,26 @@ export default function Tela3 (){
     )
 
 }
+
+const BannerName = styled.h1`
+font-size:26px;
+font-weight: lighter;
+margin-left: 14px;
+
+
+`
+const BannerFilme = styled.img `
+background-color: #FFFFFF;
+margin-left: 10px;
+width:64px;
+height:89px;
+`
+
 const Bot= styled.div`
    display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom:40px
+    margin-bottom:131px
   
     `
 

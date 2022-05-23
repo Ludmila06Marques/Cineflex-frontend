@@ -2,17 +2,16 @@ import styled from "styled-components"
 import { Link } from 'react-router-dom';
 
 
-export default function Hora ({ showtimes }) {
+export default function Hora ({ showtimes  }) {
 
-
-
+  
 
 
     return(
         <BlocoHora>
             {showtimes.map((props,index) =>
 
-                <Link to={`/assentos/${props.id}`}>
+                <Link  to={`/assentos/${props.id}`}>
                     <Conjunto
                     time={props.name}
                     timeId={props.id}

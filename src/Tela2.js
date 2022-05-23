@@ -3,13 +3,14 @@ import axios from "axios";
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Hora from "./Hora";
+import Footer from "./Footer";
 
 
 
-export default function Tela2 (){
-    const [data, setData] = useState([])
+export default function Tela2 ({poster , setPoster , horario , setHorario}){
+   
     const { idFilme } = useParams()
-    const [horario, setHorario] = useState([])
+  
    
 
     useEffect (() => {
@@ -17,7 +18,8 @@ export default function Tela2 (){
 
         promise.then (response =>{
             setHorario(response.data.days)
-            setData(response.data)
+            console.log(response.data.days)
+            setPoster(response.data)
             
             
         })    
@@ -44,6 +46,7 @@ export default function Tela2 (){
                     
                     <Hora
                     showtimes={props.showtimes}
+                   
                     > 
                     </Hora>
                     
@@ -54,8 +57,8 @@ export default function Tela2 (){
                 </Sessao>)}
             
             <Footer>
-                <BannerFilme src={data.posterURL}></BannerFilme>
-                <BannerName> {data.title} </BannerName>
+                <BannerFilme src={poster.posterURL}></BannerFilme>
+                <BannerName> {poster.title} </BannerName>
             </Footer>
             </>
 
@@ -82,19 +85,7 @@ margin-left: 20px;
 
 
 `
-const Footer = styled.div`
-position:fixed;
-bottom:0px;
-left: 0;
-background-color: 
-#9EADBA;
-width:100%;
-height:117px;
-display:flex;
-align-items: center;
-justify-content: flex-start;
 
-`
 
 const BannerFilme = styled.img `
 background-color: #FFFFFF;
