@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom"
 import styled from "styled-components"
 
-export default function Tela4({cpf , name  , poster } ){
+export default function Tela4({cpf , name  , poster , horario} ){
+console.log(horario)
 
     return(
         <>

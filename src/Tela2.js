@@ -25,7 +25,9 @@ export default function Tela2 ({poster , setPoster , horario , setHorario}){
         })    
     },[] )
 
-
+        function Selecionar(){
+            
+        }
 
     
 
@@ -35,7 +37,7 @@ export default function Tela2 ({poster , setPoster , horario , setHorario}){
 
             {horario.map((props,index)=> 
 
-                <Sessao
+                <Sessao onClick={Selecionar}
                 key={index}
                 scheduleId={props.id}
                 weekday={props.weekday}
